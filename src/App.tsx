@@ -2,6 +2,7 @@ import "./App.css";
 import Counter from "./components/Counter/Counter";
 import NameForm from "./components/NameForm/NameForm";
 import NameInput from "./components/NameInput/NameInput";
+import Todos from "./components/Todos/Todos";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Counter />
           <NameInput />
           <NameForm />
+         <Todos/>
         </main>
       </div>
     </>
