@@ -1,14 +1,23 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+
 import "./App.css";
+import Counter from "./components/Counter/Counter";
+import NameInput from "./components/NameInput/NameInput";
 
 function App() {
-  const [count, setCount] = useState(0);
+ 
 
   return (
     <>
-      <div></div>
+     <div className="min-h-screen bg-gray-100 p-6 space-y-6 rounded-lg">
+      <header className="max-w-4xl mx-auto">
+        <h1 className="text-3xl font-bold">React + TypeScript + Tailwind </h1>
+      </header>
+
+      <main className="max-w-4xl mx-auto space-y-6">
+        <Counter />
+        <NameInput />
+        </main>
+      </div>
     </>
   );
 }
