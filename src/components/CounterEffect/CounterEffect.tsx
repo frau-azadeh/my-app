@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const CounterEffect = () => {
+const CounterEffect:React.FC = () => {
     const [count, setCount] = useState<number>(0);
 
     useEffect(()=>{
