@@ -10,6 +10,7 @@ import type { Todo } from "./types/types";
 import toast from "react-hot-toast";
 import AddEditModal from "./components/ToDo/AddEditModal";
 import SimpleTimer from "./components/SimpleTimer/SimpleTimer";
+import CounterEffect from "./components/CounterEffect/CounterEffect";
 
 function App() {
 
@@ -60,16 +61,22 @@ function App() {
         </header>
 
         <main className="max-w-4xl mx-auto space-y-6">
+           <h3 className="text-2xl font-bold">useState example</h3>
           <Counter />
           <NameInput />
           <NameForm />
          <Todos/>
          <SimpleTimer/>
+        
          <section>
            <h3 className="text-2xl font-bold">Todo App — useState practice</h3>
           <button onClick={openAdd} className="px-4 py-2 bg-indigo-600 text-white rounded">Add Todo</button>
      
           <TodoList todos={todos} onEdit={openEdit} onDelete={handleDelete}/>
+         </section>
+          <section>
+           <h3 className="text-2xl font-bold">useEffect</h3>
+           <CounterEffect/>
          </section>
         </main>
         <AddEditModal
