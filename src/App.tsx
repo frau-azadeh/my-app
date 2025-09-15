@@ -11,6 +11,7 @@ import toast from "react-hot-toast";
 import AddEditModal from "./components/ToDo/AddEditModal";
 import SimpleTimer from "./components/SimpleTimer/SimpleTimer";
 import CounterEffect from "./components/CounterEffect/CounterEffect";
+import User from "./components/User/User";
 
 function App() {
 
@@ -74,9 +75,10 @@ function App() {
      
           <TodoList todos={todos} onEdit={openEdit} onDelete={handleDelete}/>
          </section>
-          <section>
+          <section >
            <h3 className="text-2xl font-bold">useEffect</h3>
            <CounterEffect/>
+           <User/>
          </section>
         </main>
         <AddEditModal
