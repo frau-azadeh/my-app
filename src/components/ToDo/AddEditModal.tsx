@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 type Props = {
   open: boolean;
   initialText?: string;

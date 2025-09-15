@@ -1,17 +1,20 @@
 import { useState } from "react";
-import "./App.css";
+
+import toast from "react-hot-toast";
+
 import Counter from "./components/Counter/Counter";
+import CounterEffect from "./components/CounterEffect/CounterEffect";
 import NameForm from "./components/NameForm/NameForm";
 import NameInput from "./components/NameInput/NameInput";
+import SimpleTimer from "./components/SimpleTimer/SimpleTimer";
+import AddEditModal from "./components/ToDo/AddEditModal";
 import TodoList from "./components/ToDo/TodoList";
 import Todos from "./components/Todos/Todos";
+import User from "./components/User/User";
 import useLocalStorage from "./hooks/useLocalStorage";
 import type { Todo } from "./types/types";
-import toast from "react-hot-toast";
-import AddEditModal from "./components/ToDo/AddEditModal";
-import SimpleTimer from "./components/SimpleTimer/SimpleTimer";
-import CounterEffect from "./components/CounterEffect/CounterEffect";
-import User from "./components/User/User";
+
+import "./App.css";
 
 function App() {
   const [todos, setTodos] = useLocalStorage<Todo[]>("todos_v1", []);

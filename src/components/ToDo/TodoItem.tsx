@@ -1,6 +1,8 @@
 import React from "react";
-import type { Todo } from "../../types/types";
+
 import { Edit2, Trash2 } from "lucide-react";
+
+import type { Todo } from "../../types/types";
 
 type Props = {
   todo: Todo;
