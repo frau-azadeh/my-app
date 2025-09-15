@@ -14,45 +14,50 @@ import CounterEffect from "./components/CounterEffect/CounterEffect";
 import User from "./components/User/User";
 
 function App() {
-
-  const [todos, setTodos] = useLocalStorage<Todo[]>("todos_v1", [])
+  const [todos, setTodos] = useLocalStorage<Todo[]>("todos_v1", []);
 
   const [isModalOpen, setModalOpen] = useState(false);
-  const [editing, setEditing] = useState<Todo | null >(null)
+  const [editing, setEditing] = useState<Todo | null>(null);
 
-  const openAdd = () =>{
+  const openAdd = () => {
     setEditing(null);
     setModalOpen(true);
-  }
+  };
 
-  const openEdit = (t: Todo) =>{
+  const openEdit = (t: Todo) => {
     setEditing(t);
-    setModalOpen(true)
-  }
+    setModalOpen(true);
+  };
 
-  const closeModal = () =>{
-    setModalOpen(false)
-    setEditing(null)
-  }
+  const closeModal = () => {
+    setModalOpen(false);
+    setEditing(null);
+  };
 
-  const handleAdd = (text: string)=>{
-    const newTodo: Todo={id: Date.now().toLocaleString(), text, createdAt:Date.now()}
-    setTodos((prev)=>[newTodo, ...prev])
-    toast.success("Todo added")
+  const handleAdd = (text: string) => {
+    const newTodo: Todo = {
+      id: Date.now().toLocaleString(),
+      text,
+      createdAt: Date.now(),
+    };
+    setTodos((prev) => [newTodo, ...prev]);
+    toast.success("Todo added");
     closeModal();
-  }
+  };
 
-  const handleUpdate = (text:string)=>{
-    if(!editing) return;
-    setTodos((prev)=>prev.map((t)=>(t.id === editing.id? {...t, text}:t)))
-    toast.success("Todo updated")
-    closeModal
-  }
+  const handleUpdate = (text: string) => {
+    if (!editing) return;
+    setTodos((prev) =>
+      prev.map((t) => (t.id === editing.id ? { ...t, text } : t)),
+    );
+    toast.success("Todo updated");
+    closeModal;
+  };
 
-  const handleDelete = (id: string)=>{
-    setTodos((prev)=>prev.filter((t)=>t.id !== id))
-    toast.success("Todo Deleted")
-  }
+  const handleDelete = (id: string) => {
+    setTodos((prev) => prev.filter((t) => t.id !== id));
+    toast.success("Todo Deleted");
+  };
 
   return (
     <>
@@ -62,29 +67,34 @@ function App() {
         </header>
 
         <main className="max-w-4xl mx-auto space-y-6">
-           <h3 className="text-2xl font-bold">useState example</h3>
+          <h3 className="text-2xl font-bold">useState example</h3>
           <Counter />
           <NameInput />
           <NameForm />
-         <Todos/>
-         <SimpleTimer/>
-        
-         <section>
-           <h3 className="text-2xl font-bold">Todo App — useState practice</h3>
-          <button onClick={openAdd} className="px-4 py-2 bg-indigo-600 text-white rounded">Add Todo</button>
-     
-          <TodoList todos={todos} onEdit={openEdit} onDelete={handleDelete}/>
-         </section>
-          <section >
-           <h3 className="text-2xl font-bold">useEffect</h3>
-           <CounterEffect/>
-           <User/>
-         </section>
+          <Todos />
+          <SimpleTimer />
+
+          <section>
+            <h3 className="text-2xl font-bold">Todo App — useState practice</h3>
+            <button
+              onClick={openAdd}
+              className="px-4 py-2 bg-indigo-600 text-white rounded"
+            >
+              Add Todo
+            </button>
+
+            <TodoList todos={todos} onEdit={openEdit} onDelete={handleDelete} />
+          </section>
+          <section>
+            <h3 className="text-2xl font-bold">useEffect</h3>
+            <CounterEffect />
+            <User />
+          </section>
         </main>
         <AddEditModal
           open={isModalOpen}
           initialText={editing ? editing.text : ""}
-          title={editing? "Edit Todo": "Add Todo"}
+          title={editing ? "Edit Todo" : "Add Todo"}
           onClose={closeModal}
           onSubmit={editing ? handleUpdate : handleAdd}
         />

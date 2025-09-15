@@ -1,6 +1,6 @@
-import React from 'react'
-import type { Todo } from '../../types/types'
-import TodoItem from './TodoItem';
+import React from "react";
+import type { Todo } from "../../types/types";
+import TodoItem from "./TodoItem";
 type Props = {
   todos: Todo[];
   onEdit: (t: Todo) => void;
@@ -9,7 +9,9 @@ type Props = {
 
 const TodoList: React.FC<Props> = ({ todos, onEdit, onDelete }) => {
   if (!todos.length) {
-    return <div className="text-center text-gray-500">No todos yet — add one ✨</div>;
+    return (
+      <div className="text-center text-gray-500">No todos yet — add one ✨</div>
+    );
   }
 
   return (
@@ -21,5 +23,4 @@ const TodoList: React.FC<Props> = ({ todos, onEdit, onDelete }) => {
   );
 };
 
-
-export default TodoList
+export default TodoList;

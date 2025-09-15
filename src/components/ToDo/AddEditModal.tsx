@@ -7,7 +7,13 @@ type Props = {
   onSubmit: (text: string) => void;
 };
 
-const AddEditModal: React.FC<Props> = ({ open, initialText = "", title = "Modal", onClose, onSubmit }) => {
+const AddEditModal: React.FC<Props> = ({
+  open,
+  initialText = "",
+  title = "Modal",
+  onClose,
+  onSubmit,
+}) => {
   const [text, setText] = useState<string>(initialText);
 
   useEffect(() => {
@@ -31,7 +37,9 @@ const AddEditModal: React.FC<Props> = ({ open, initialText = "", title = "Modal"
         />
 
         <div className="flex gap-3 justify-end">
-          <button onClick={onClose} className="px-4 py-2 rounded border">Cancel</button>
+          <button onClick={onClose} className="px-4 py-2 rounded border">
+            Cancel
+          </button>
           <button
             onClick={() => {
               if (!text.trim()) return;
@@ -47,4 +55,4 @@ const AddEditModal: React.FC<Props> = ({ open, initialText = "", title = "Modal"
   );
 };
 
-export default AddEditModal
+export default AddEditModal;
