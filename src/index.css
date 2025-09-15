@@ -3,4 +3,6 @@
 @tailwind utilities;
 
 /* اگر لازم داری استایل‌های عمومی اضافه کن */
-body { @apply bg-gray-50; }
+body {
+  @apply bg-gray-50;
+}
