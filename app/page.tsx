@@ -1,3 +1,5 @@
+import Card from "./components/ui/Card";
+
 export default function Page() {
   return (
     <main
@@ -14,7 +16,9 @@ export default function Page() {
           جایگزین کنید. این بخش در مرکز صفحه نمایش داده می‌شود و اندازه و
           فاصله‌های آن با صفحه‌نمایش موبایل، تبلت و دسکتاپ هماهنگ می‌شود.
         </p>
+        <Card/>
       </section>
+      
     </main>
   );
 }
